@@ -4,8 +4,125 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "16dfc4dda7fffea6840ce86a954b51e1",
-    "packages": [],
+    "content-hash": "3df1da9f2513a61982070ffc8f1ce223",
+    "packages": [
+        {
+            "name": "flexphp/messages",
+            "version": "dev-develop",
+            "dist": {
+                "type": "path",
+                "url": "../messages",
+                "reference": "742352e54b265fab562fc75ce3d6805be60ce5d2",
+                "shasum": null
+            },
+            "require": {
+                "php": ">=7.1.3"
+            },
+            "require-dev": {
+                "phpstan/phpstan": "~0.9",
+                "phpunit/phpunit": "^7.0",
+                "squizlabs/php_codesniffer": "~3.2"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "FlexPHP\\Messages\\": "src/"
+                }
+            },
+            "autoload-dev": {
+                "psr-4": {
+                    "FlexPHP\\Messages\\Tests\\": "tests/"
+                }
+            },
+            "scripts": {
+                "phpcs": [
+                    "phpcs --standard=PSR2 src/"
+                ],
+                "phpfix": [
+                    "phpcbf --standard=PSR2 --extensions=php src/"
+                ],
+                "phpstan": [
+                    "phpstan analyse -l 7 src/"
+                ],
+                "phpunit": [
+                    "phpunit --bootstrap vendor/autoload.php --testdox tests/"
+                ],
+                "test": [
+                    "@phpcs",
+                    "@phpstan",
+                    "@phpunit"
+                ]
+            },
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Freddie Gar",
+                    "email": "freddie.gar@outlook.com"
+                }
+            ],
+            "description": "Agnostic messages PHP, any framework"
+        },
+        {
+            "name": "flexphp/repositories",
+            "version": "dev-develop",
+            "dist": {
+                "type": "path",
+                "url": "../repositories",
+                "reference": "253ded4b59a6a3decb405ecf5775424c5311c9ed",
+                "shasum": null
+            },
+            "require": {
+                "php": ">=7.1.3"
+            },
+            "require-dev": {
+                "phpstan/phpstan": "~0.9",
+                "phpunit/phpunit": "^7.0",
+                "squizlabs/php_codesniffer": "~3.2"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "FlexPHP\\Repositories\\": "src/"
+                }
+            },
+            "autoload-dev": {
+                "psr-4": {
+                    "FlexPHP\\Repositories\\Tests\\": "tests/"
+                }
+            },
+            "scripts": {
+                "phpcs": [
+                    "phpcs --standard=PSR2 src/"
+                ],
+                "phpfix": [
+                    "phpcbf --standard=PSR2 --extensions=php src/"
+                ],
+                "phpstan": [
+                    "phpstan analyse -l 7 src/"
+                ],
+                "phpunit": [
+                    "phpunit --bootstrap vendor/autoload.php --testdox tests/"
+                ],
+                "test": [
+                    "@phpcs",
+                    "@phpstan",
+                    "@phpunit"
+                ]
+            },
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Freddie Gar",
+                    "email": "freddie.gar@outlook.com"
+                }
+            ],
+            "description": "Agnostic repositories PHP, any framework"
+        }
+    ],
     "packages-dev": [
         {
             "name": "composer/xdebug-handler",
@@ -2666,8 +2783,11 @@
         }
     ],
     "aliases": [],
-    "minimum-stability": "stable",
-    "stability-flags": [],
+    "minimum-stability": "dev",
+    "stability-flags": {
+        "flexphp/messages": 20,
+        "flexphp/repositories": 20
+    },
     "prefer-stable": true,
     "prefer-lowest": false,
     "platform": {
