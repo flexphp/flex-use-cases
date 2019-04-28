@@ -1,6 +1,6 @@
 {
-    "name": "flexphp/jobs",
-    "description": "Agnostic jobs PHP, any framework",
+    "name": "flexphp/use-cases",
+    "description": "Agnostic use-cases PHP, any framework",
     "type": "library",
     "license": "MIT",
     "authors": [
@@ -19,12 +19,12 @@
     },
     "autoload": {
         "psr-4": {
-            "FlexPHP\\Jobs\\": "src/"
+            "FlexPHP\\UseCases\\": "src/"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "FlexPHP\\Jobs\\Tests\\": "tests/"
+            "FlexPHP\\UseCases\\Tests\\": "tests/"
         }
     },
     "scripts": {
