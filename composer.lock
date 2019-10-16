@@ -4,16 +4,21 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "3df1da9f2513a61982070ffc8f1ce223",
+    "content-hash": "6ec647cfd86a6eab6dba1548a268fcc2",
     "packages": [
         {
             "name": "flexphp/messages",
             "version": "dev-develop",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/flexphp/messages.git",
+                "reference": "da06b63b103a6cc220e6be294486fe3cbaeb67b0"
+            },
             "dist": {
-                "type": "path",
-                "url": "../messages",
-                "reference": "742352e54b265fab562fc75ce3d6805be60ce5d2",
-                "shasum": null
+                "type": "zip",
+                "url": "https://api.github.com/repos/flexphp/messages/zipball/da06b63b103a6cc220e6be294486fe3cbaeb67b0",
+                "reference": "da06b63b103a6cc220e6be294486fe3cbaeb67b0",
+                "shasum": ""
             },
             "require": {
                 "php": ">=7.1.3"
@@ -29,30 +34,7 @@
                     "FlexPHP\\Messages\\": "src/"
                 }
             },
-            "autoload-dev": {
-                "psr-4": {
-                    "FlexPHP\\Messages\\Tests\\": "tests/"
-                }
-            },
-            "scripts": {
-                "phpcs": [
-                    "phpcs --standard=PSR2 src/"
-                ],
-                "phpfix": [
-                    "phpcbf --standard=PSR2 --extensions=php src/"
-                ],
-                "phpstan": [
-                    "phpstan analyse -l 7 src/"
-                ],
-                "phpunit": [
-                    "phpunit --bootstrap vendor/autoload.php --testdox tests/"
-                ],
-                "test": [
-                    "@phpcs",
-                    "@phpstan",
-                    "@phpunit"
-                ]
-            },
+            "notification-url": "https://packagist.org/downloads/",
             "license": [
                 "MIT"
             ],
@@ -62,16 +44,22 @@
                     "email": "freddie.gar@outlook.com"
                 }
             ],
-            "description": "Agnostic messages PHP, any framework"
+            "description": "Agnostic messages PHP, any framework",
+            "time": "2019-04-28T02:38:20+00:00"
         },
         {
             "name": "flexphp/repositories",
             "version": "dev-develop",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/flexphp/flex-repositories.git",
+                "reference": "788e0ddd29d2a8b8ef84ad3f796a7b049309d4a5"
+            },
             "dist": {
-                "type": "path",
-                "url": "../repositories",
-                "reference": "253ded4b59a6a3decb405ecf5775424c5311c9ed",
-                "shasum": null
+                "type": "zip",
+                "url": "https://api.github.com/repos/flexphp/flex-repositories/zipball/788e0ddd29d2a8b8ef84ad3f796a7b049309d4a5",
+                "reference": "788e0ddd29d2a8b8ef84ad3f796a7b049309d4a5",
+                "shasum": ""
             },
             "require": {
                 "php": ">=7.1.3"
@@ -87,30 +75,7 @@
                     "FlexPHP\\Repositories\\": "src/"
                 }
             },
-            "autoload-dev": {
-                "psr-4": {
-                    "FlexPHP\\Repositories\\Tests\\": "tests/"
-                }
-            },
-            "scripts": {
-                "phpcs": [
-                    "phpcs --standard=PSR2 src/"
-                ],
-                "phpfix": [
-                    "phpcbf --standard=PSR2 --extensions=php src/"
-                ],
-                "phpstan": [
-                    "phpstan analyse -l 7 src/"
-                ],
-                "phpunit": [
-                    "phpunit --bootstrap vendor/autoload.php --testdox tests/"
-                ],
-                "test": [
-                    "@phpcs",
-                    "@phpstan",
-                    "@phpunit"
-                ]
-            },
+            "notification-url": "https://packagist.org/downloads/",
             "license": [
                 "MIT"
             ],
@@ -120,7 +85,8 @@
                     "email": "freddie.gar@outlook.com"
                 }
             ],
-            "description": "Agnostic repositories PHP, any framework"
+            "description": "Agnostic repositories PHP, any framework",
+            "time": "2019-04-28T02:37:14+00:00"
         }
     ],
     "packages-dev": [
