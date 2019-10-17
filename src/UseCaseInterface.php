@@ -37,7 +37,8 @@ interface UseCaseInterface
     /**
      * Execute use case and return response
      *
+     * @param RequestInterface $request
      * @return ResponseInterface
      */
-    public function execute(RequestInterface $request): ResponseInterface;
+    public function execute($request);
 }

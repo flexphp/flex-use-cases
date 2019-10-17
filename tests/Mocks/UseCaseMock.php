@@ -2,11 +2,10 @@
 
 namespace FlexPHP\UseCases\Tests\Mocks;
 
-use FlexPHP\Messages\RequestInterface;
-use FlexPHP\Messages\ResponseInterface;
 use FlexPHP\UseCases\UseCase;
 use FlexPHP\UseCases\Exception\UnavailableRepositoryUseCaseException;
 use FlexPHP\UseCases\Tests\Mocks\ResponseMock;
+use FlexPHP\UseCases\Tests\Mocks\RequestMock;
 use Exception;
 
 /**
@@ -16,7 +15,13 @@ use Exception;
  */
 class UseCaseMock extends UseCase
 {
-    public function execute(RequestInterface $request): ResponseInterface
+    /**
+     * Use case mock
+     *
+     * @param RequestMock $request
+     * @return ResponseMock
+     */
+    public function execute($request)
     {
         $item = [];
         $item['foo'] = $request->foo;
