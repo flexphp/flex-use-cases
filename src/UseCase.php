@@ -4,6 +4,7 @@ namespace FlexPHP\UseCases;
 
 use FlexPHP\Repositories\RepositoryInterface;
 use FlexPHP\UseCases\Exception\UndefinedRepositoryUseCaseException;
+use FlexPHP\UseCases\Exception\NotValidRequestException;
 
 /**
  * Class UseCase
@@ -40,5 +41,15 @@ abstract class UseCase implements UseCaseInterface
         }
 
         return $this->repository;
+    }
+
+    /**
+     * @throws NotValidRequestException
+     */
+    public function throwExceptionIfRequestNotValid(string $function, string $requestExpected, $requestUsed): void
+    {
+        if (!$requestUsed instanceof $requestExpected) {
+            throw new NotValidRequestException($function, $requestExpected, $requestUsed);
+        }
     }
 }

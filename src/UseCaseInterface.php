@@ -35,6 +35,16 @@ interface UseCaseInterface
     public function getRepository(): RepositoryInterface;
 
     /**
+     * Valid request in execute method is allowed
+     *
+     * @param string $function
+     * @param string $requestExpected
+     * @param mixed $requestUsed
+     * @return void
+     */
+    public function throwExceptionIfRequestNotValid(string $function, string $requestExpected, $requestUsed): void;
+
+    /**
      * Execute use case and return response
      *
      * @param RequestInterface $request

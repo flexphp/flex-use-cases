@@ -23,13 +23,15 @@ class UseCaseMock extends UseCase
      */
     public function execute($request)
     {
+        $this->throwExceptionIfRequestNotValid(__FUNCTION__, RequestMock::class, $request);
+
         $item = [];
         $item['foo'] = $request->foo;
         $item['bar'] = $request->bar;
 
         try {
             $response = $this->getRepository()->push($item);
-        } catch(Exception $exception) {
+        } catch (Exception $exception) {
             throw new UnavailableRepositoryUseCaseException($exception->getMessage());
         }
 

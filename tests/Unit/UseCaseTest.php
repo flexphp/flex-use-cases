@@ -3,12 +3,14 @@
 namespace FlexPHP\UseCases\Tests\Unit;
 
 use FlexPHP\Messages\ResponseInterface;
+use FlexPHP\UseCases\Exception\NotValidRequestException;
 use FlexPHP\UseCases\Exception\UnavailableRepositoryUseCaseException;
 use FlexPHP\UseCases\Exception\UndefinedRepositoryUseCaseException;
 use FlexPHP\UseCases\UseCaseInterface;
 use FlexPHP\UseCases\Tests\Mocks\GatewayMock;
 use FlexPHP\UseCases\Tests\Mocks\RequestMock;
 use FlexPHP\UseCases\Tests\Mocks\RepositoryMock;
+use FlexPHP\UseCases\Tests\Mocks\RequestNotValidMock;
 use FlexPHP\UseCases\Tests\Mocks\UnavailableRepositoryMock;
 use FlexPHP\UseCases\Tests\Mocks\UseCaseMock;
 use FlexPHP\UseCases\Tests\TestCase;
@@ -59,6 +61,18 @@ class UseCaseTest extends TestCase
         $this->assertSame($repository, $useCase->getRepository());
         $this->assertInstanceOf(ResponseInterface::class, $response);
         $this->assertSame(1, $response->response());
+    }
+
+    /**
+     * @throws NotValidRequestException
+     */
+    public function testItGetNotValidRequestThrowException()
+    {
+        $this->expectException(NotValidRequestException::class);
+        $this->expectExceptionMessage('Request');
+
+        $useCase = new UseCaseMock();
+        $useCase->execute(new RequestNotValidMock());
     }
 
     /**
