@@ -76,6 +76,18 @@ class UseCaseTest extends TestCase
     }
 
     /**
+     * @throws NotValidRequestException
+     */
+    public function testItGetNotValidRequestNotClassThrowException()
+    {
+        $this->expectException(NotValidRequestException::class);
+        $this->expectExceptionMessage('Request');
+
+        $useCase = new UseCaseMock();
+        $useCase->execute([]);
+    }
+
+    /**
      * @throws UndefinedRepositoryUseCaseException
      */
     public function testItGetUndefinedRepositoryThrowException()
