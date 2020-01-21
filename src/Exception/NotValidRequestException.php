@@ -4,6 +4,11 @@ namespace FlexPHP\UseCases\Exception;
 
 class NotValidRequestException extends \Exception implements UseCaseExceptionInterface
 {
+    /**
+     * @param string $function
+     * @param string $expected
+     * @param mixed $used
+     */
     public function __construct($function, $expected, $used)
     {
         $used = \is_object($used)

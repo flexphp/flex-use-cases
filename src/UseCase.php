@@ -44,6 +44,10 @@ abstract class UseCase implements UseCaseInterface
     }
 
     /**
+     * @param string $function
+     * @param string $requestExpected
+     * @param mixed $requestUsed
+     * @return void
      * @throws NotValidRequestException
      */
     public function throwExceptionIfRequestNotValid(string $function, string $requestExpected, $requestUsed): void
