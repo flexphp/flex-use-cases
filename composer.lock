@@ -12,12 +12,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/flexphp/flex-messages.git",
-                "reference": "82c407a6dcee56f269fecb4d93666b17898fc630"
+                "reference": "365a5aef8b07dcc2b48d8d30be251d2264303920"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/flexphp/flex-messages/zipball/82c407a6dcee56f269fecb4d93666b17898fc630",
-                "reference": "82c407a6dcee56f269fecb4d93666b17898fc630",
+                "url": "https://api.github.com/repos/flexphp/flex-messages/zipball/365a5aef8b07dcc2b48d8d30be251d2264303920",
+                "reference": "365a5aef8b07dcc2b48d8d30be251d2264303920",
                 "shasum": ""
             },
             "require": {
@@ -45,7 +45,7 @@
                 }
             ],
             "description": "Agnostic messages PHP, any framework",
-            "time": "2019-11-05T22:04:06+00:00"
+            "time": "2020-01-21T14:08:18+00:00"
         },
         {
             "name": "flexphp/repositories",
@@ -53,12 +53,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/flexphp/flex-repositories.git",
-                "reference": "049341ecf50d9a6f3ea711529ef215755db00812"
+                "reference": "621895e0159f4a4637413bcb0d52ba725d557263"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/flexphp/flex-repositories/zipball/049341ecf50d9a6f3ea711529ef215755db00812",
-                "reference": "049341ecf50d9a6f3ea711529ef215755db00812",
+                "url": "https://api.github.com/repos/flexphp/flex-repositories/zipball/621895e0159f4a4637413bcb0d52ba725d557263",
+                "reference": "621895e0159f4a4637413bcb0d52ba725d557263",
                 "shasum": ""
             },
             "require": {
@@ -86,7 +86,7 @@
                 }
             ],
             "description": "Agnostic repositories PHP, any framework",
-            "time": "2019-11-05T22:10:15+00:00"
+            "time": "2020-01-21T14:08:28+00:00"
         }
     ],
     "packages-dev": [
@@ -512,16 +512,16 @@
         },
         {
             "name": "phpstan/phpstan",
-            "version": "0.12.6",
+            "version": "0.12.7",
             "source": {
                 "type": "git",
                 "url": "https://github.com/phpstan/phpstan.git",
-                "reference": "884659352d9ae2446f5ec5c6109b1e893c2387b1"
+                "reference": "07fa7958027fd98c567099bbcda5d6a0f2ec5197"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/phpstan/phpstan/zipball/884659352d9ae2446f5ec5c6109b1e893c2387b1",
-                "reference": "884659352d9ae2446f5ec5c6109b1e893c2387b1",
+                "url": "https://api.github.com/repos/phpstan/phpstan/zipball/07fa7958027fd98c567099bbcda5d6a0f2ec5197",
+                "reference": "07fa7958027fd98c567099bbcda5d6a0f2ec5197",
                 "shasum": ""
             },
             "require": {
@@ -547,7 +547,7 @@
                 "MIT"
             ],
             "description": "PHPStan - PHP Static Analysis Tool",
-            "time": "2020-01-20T14:12:32+00:00"
+            "time": "2020-01-20T21:59:06+00:00"
         },
         {
             "name": "phpunit/php-code-coverage",
