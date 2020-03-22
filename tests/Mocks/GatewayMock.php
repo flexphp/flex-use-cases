@@ -11,6 +11,9 @@ namespace FlexPHP\UseCases\Tests\Mocks;
 
 class GatewayMock
 {
+    /**
+     * @var array<int, array>
+     */
     private $collection = [];
 
     /**
@@ -18,34 +21,34 @@ class GatewayMock
      */
     public function create(array $item): int
     {
-        $id = $this->count() + 1;
-        $this->collection[$id] = $item;
+        $itemId = $this->count() + 1;
+        $this->collection[$itemId] = $item;
 
-        return $id;
+        return $itemId;
     }
 
     /**
      * Get item in collection
      */
-    public function read(int $id): ?array
+    public function read(int $itemId): ?array
     {
-        if (!$this->exist($id)) {
+        if (!$this->exist($itemId)) {
             return null;
         }
 
-        return $this->collection[$id];
+        return $this->collection[$itemId];
     }
 
     /**
      * Edit item in collection
      */
-    public function update(int $id, array $item): bool
+    public function update(int $itemId, array $item): bool
     {
-        if (!$this->exist($id)) {
+        if (!$this->exist($itemId)) {
             return false;
         }
 
-        $this->collection[$id] = $item;
+        $this->collection[$itemId] = $item;
 
         return true;
     }
@@ -53,23 +56,23 @@ class GatewayMock
     /**
      * Remove item in collection
      */
-    public function delete(int $id): bool
+    public function delete(int $itemId): bool
     {
-        if (!$this->exist($id)) {
+        if (!$this->exist($itemId)) {
             return false;
         }
 
-        unset($this->collection[$id]);
+        unset($this->collection[$itemId]);
 
         return true;
     }
 
-    private function exist(int $id)
+    private function exist(int $itemId): bool
     {
-        return !empty($this->collection[$id]);
+        return !empty($this->collection[$itemId]);
     }
 
-    private function count()
+    private function count(): int
     {
         return \count($this->collection);
     }

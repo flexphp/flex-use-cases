@@ -13,8 +13,14 @@ use FlexPHP\Messages\RequestInterface;
 
 class RequestMock implements RequestInterface
 {
+    /**
+     * @var string
+     */
     public $foo;
 
+    /**
+     * @var string
+     */
     public $bar;
 
     public function __construct(array $data = [])

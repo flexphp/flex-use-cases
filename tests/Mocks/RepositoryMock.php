@@ -21,7 +21,7 @@ class RepositoryMock extends Repository
      *
      * @return int
      */
-    public function push(array $item)
+    public function push(array $item): int
     {
         return $this->getGateway()->create($item);
     }

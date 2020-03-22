@@ -13,14 +13,17 @@ use FlexPHP\Messages\ResponseInterface;
 
 class ResponseMock implements ResponseInterface
 {
+    /**
+     * @var int
+     */
     private $response;
 
-    public function __construct($data)
+    public function __construct(int $data)
     {
         $this->response = $data;
     }
 
-    public function response()
+    public function response(): int
     {
         return $this->response;
     }

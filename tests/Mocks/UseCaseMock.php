@@ -21,7 +21,7 @@ class UseCaseMock extends UseCase
     /**
      * Use case mock
      *
-     * @param RequestMock $request
+     * @param mixed|RequestMock $request
      *
      * @return ResponseMock
      */

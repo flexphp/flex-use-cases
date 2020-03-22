@@ -19,6 +19,8 @@ class UnavailableRepositoryMock extends Repository
      */
     public function push(array $item): void
     {
+        unset($item);
+
         throw new UnavailableRepositoryUseCaseException();
     }
 }
