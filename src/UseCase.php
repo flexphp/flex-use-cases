@@ -27,11 +27,9 @@ abstract class UseCase implements UseCaseInterface
         }
     }
 
-    public function setRepository(RepositoryInterface $repository): UseCaseInterface
+    public function setRepository(RepositoryInterface $repository): void
     {
         $this->repository = $repository;
-
-        return $this;
     }
 
     /**

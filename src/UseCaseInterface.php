@@ -24,10 +24,8 @@ interface UseCaseInterface
 
     /**
      * Set repository to use
-     *
-     * @return UseCaseInterface
      */
-    public function setRepository(RepositoryInterface $repository): self;
+    public function setRepository(RepositoryInterface $repository): void;
 
     /**
      * Get repository setup by constructor or setRepository method
