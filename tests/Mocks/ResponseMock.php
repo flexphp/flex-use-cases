@@ -1,16 +1,19 @@
-<?php
-
+<?php declare(strict_types=1);
+/*
+ * This file is part of FlexPHP.
+ *
+ * (c) Freddie Gar <freddie.gar@outlook.com>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
 namespace FlexPHP\UseCases\Tests\Mocks;
 
 use FlexPHP\Messages\ResponseInterface;
 
-/**
- * Class ResponseMock
- * @package FlexPHP\UseCases\Tests\Mocks
- */
 class ResponseMock implements ResponseInterface
 {
-    private $response = null;
+    private $response;
 
     public function __construct($data)
     {

@@ -1,23 +1,30 @@
-<?php
-
+<?php declare(strict_types=1);
+/*
+ * This file is part of FlexPHP.
+ *
+ * (c) Freddie Gar <freddie.gar@outlook.com>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
 namespace FlexPHP\UseCases\Tests\Unit;
 
 use FlexPHP\Messages\ResponseInterface;
 use FlexPHP\UseCases\Exception\NotValidRequestException;
 use FlexPHP\UseCases\Exception\UnavailableRepositoryUseCaseException;
 use FlexPHP\UseCases\Exception\UndefinedRepositoryUseCaseException;
-use FlexPHP\UseCases\UseCaseInterface;
 use FlexPHP\UseCases\Tests\Mocks\GatewayMock;
-use FlexPHP\UseCases\Tests\Mocks\RequestMock;
 use FlexPHP\UseCases\Tests\Mocks\RepositoryMock;
+use FlexPHP\UseCases\Tests\Mocks\RequestMock;
 use FlexPHP\UseCases\Tests\Mocks\RequestNotValidMock;
 use FlexPHP\UseCases\Tests\Mocks\UnavailableRepositoryMock;
 use FlexPHP\UseCases\Tests\Mocks\UseCaseMock;
 use FlexPHP\UseCases\Tests\TestCase;
+use FlexPHP\UseCases\UseCaseInterface;
 
 class UseCaseTest extends TestCase
 {
-    public function testItUseInterface()
+    public function testItUseInterface(): void
     {
         $useCase = new UseCaseMock();
 
@@ -27,26 +34,7 @@ class UseCaseTest extends TestCase
     /**
      * @throws UndefinedRepositoryUseCaseException
      */
-    public function testItInitializeWithRepository()
-    {
-        $foo = 'Hello';
-        $bar = 'World';
-        $gateway = new GatewayMock();
-        $repository = new RepositoryMock($gateway);
-        $request = new RequestMock(\compact('foo', 'bar'));
-        $useCase = new UseCaseMock($repository);
-
-        $response = $useCase->execute($request);
-
-        $this->assertSame($repository, $useCase->getRepository());
-        $this->assertInstanceOf(ResponseInterface::class, $response);
-        $this->assertSame(1, $response->response());
-    }
-
-    /**
-     * @throws UndefinedRepositoryUseCaseException
-     */
-    public function testItInitializeRepositoryUsingSetter()
+    public function testItInitializeRepositoryUsingSetter(): void
     {
         $foo = 'Hello';
         $bar = 'World';
@@ -66,7 +54,7 @@ class UseCaseTest extends TestCase
     /**
      * @throws NotValidRequestException
      */
-    public function testItGetNotValidRequestThrowException()
+    public function testItGetNotValidRequestThrowException(): void
     {
         $this->expectException(NotValidRequestException::class);
         $this->expectExceptionMessage('Request');
@@ -78,7 +66,7 @@ class UseCaseTest extends TestCase
     /**
      * @throws NotValidRequestException
      */
-    public function testItGetNotValidRequestNotClassThrowException()
+    public function testItGetNotValidRequestNotClassThrowException(): void
     {
         $this->expectException(NotValidRequestException::class);
         $this->expectExceptionMessage('Request');
@@ -90,7 +78,7 @@ class UseCaseTest extends TestCase
     /**
      * @throws UndefinedRepositoryUseCaseException
      */
-    public function testItGetUndefinedRepositoryThrowException()
+    public function testItGetUndefinedRepositoryThrowException(): void
     {
         $this->expectException(UndefinedRepositoryUseCaseException::class);
 
@@ -101,7 +89,7 @@ class UseCaseTest extends TestCase
     /**
      * @throws UnavailableRepositoryUseCaseException
      */
-    public function testItGetUnavailableRepositoryThrowException()
+    public function testItGetUnavailableRepositoryThrowException(): void
     {
         $this->expectException(UnavailableRepositoryUseCaseException::class);
 

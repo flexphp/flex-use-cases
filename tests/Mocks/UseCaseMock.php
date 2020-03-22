@@ -1,16 +1,19 @@
-<?php
-
+<?php declare(strict_types=1);
+/*
+ * This file is part of FlexPHP.
+ *
+ * (c) Freddie Gar <freddie.gar@outlook.com>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
 namespace FlexPHP\UseCases\Tests\Mocks;
 
-use FlexPHP\UseCases\UseCase;
-use FlexPHP\UseCases\Exception\UnavailableRepositoryUseCaseException;
-use FlexPHP\UseCases\Tests\Mocks\ResponseMock;
-use FlexPHP\UseCases\Tests\Mocks\RequestMock;
 use Exception;
+use FlexPHP\UseCases\Exception\UnavailableRepositoryUseCaseException;
+use FlexPHP\UseCases\UseCase;
 
 /**
- * Class UseCaseMock
- * @package FlexPHP\UseCases\Tests\Mocks
  * @method RepositoryMock getRepository()
  */
 class UseCaseMock extends UseCase
@@ -19,6 +22,7 @@ class UseCaseMock extends UseCase
      * Use case mock
      *
      * @param RequestMock $request
+     *
      * @return ResponseMock
      */
     public function execute($request)

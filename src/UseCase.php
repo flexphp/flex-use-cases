@@ -1,21 +1,24 @@
-<?php
-
+<?php declare(strict_types=1);
+/*
+ * This file is part of FlexPHP.
+ *
+ * (c) Freddie Gar <freddie.gar@outlook.com>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
 namespace FlexPHP\UseCases;
 
 use FlexPHP\Repositories\RepositoryInterface;
-use FlexPHP\UseCases\Exception\UndefinedRepositoryUseCaseException;
 use FlexPHP\UseCases\Exception\NotValidRequestException;
+use FlexPHP\UseCases\Exception\UndefinedRepositoryUseCaseException;
 
-/**
- * Class UseCase
- * @package FlexPHP\UseCases
- */
 abstract class UseCase implements UseCaseInterface
 {
     /**
-     * @var RepositoryInterface|null
+     * @var null|RepositoryInterface
      */
-    private $repository = null;
+    private $repository;
 
     public function __construct(RepositoryInterface $repository = null)
     {
@@ -44,10 +47,8 @@ abstract class UseCase implements UseCaseInterface
     }
 
     /**
-     * @param string $function
-     * @param string $requestExpected
      * @param mixed $requestUsed
-     * @return void
+     *
      * @throws NotValidRequestException
      */
     public function throwExceptionIfRequestNotValid(string $function, string $requestExpected, $requestUsed): void

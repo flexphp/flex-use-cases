@@ -1,15 +1,18 @@
-<?php
-
+<?php declare(strict_types=1);
+/*
+ * This file is part of FlexPHP.
+ *
+ * (c) Freddie Gar <freddie.gar@outlook.com>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
 namespace FlexPHP\UseCases;
 
 use FlexPHP\Messages\RequestInterface;
 use FlexPHP\Messages\ResponseInterface;
 use FlexPHP\Repositories\RepositoryInterface;
 
-/**
- * Interface UseCaseInterface
- * @package FlexPHP\UseCases
- */
 interface UseCaseInterface
 {
     /**
@@ -22,25 +25,19 @@ interface UseCaseInterface
     /**
      * Set repository to use
      *
-     * @param RepositoryInterface $repository
      * @return UseCaseInterface
      */
     public function setRepository(RepositoryInterface $repository): self;
 
     /**
      * Get repository setup by constructor or setRepository method
-     *
-     * @return RepositoryInterface
      */
     public function getRepository(): RepositoryInterface;
 
     /**
      * Valid request in execute method is allowed
      *
-     * @param string $function
-     * @param string $requestExpected
      * @param mixed $requestUsed
-     * @return void
      */
     public function throwExceptionIfRequestNotValid(string $function, string $requestExpected, $requestUsed): void;
 
@@ -48,6 +45,7 @@ interface UseCaseInterface
      * Execute use case and return response
      *
      * @param RequestInterface $request
+     *
      * @return ResponseInterface
      */
     public function execute($request);
