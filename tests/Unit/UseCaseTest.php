@@ -34,6 +34,25 @@ class UseCaseTest extends TestCase
     /**
      * @throws UndefinedRepositoryUseCaseException
      */
+    public function testItInitializeWithRepository(): void
+    {
+        $foo = 'Hello';
+        $bar = 'World';
+        $gateway = new GatewayMock();
+        $repository = new RepositoryMock($gateway);
+        $request = new RequestMock(\compact('foo', 'bar'));
+        $useCase = new UseCaseMock($repository);
+
+        $response = $useCase->execute($request);
+
+        $this->assertSame($repository, $useCase->getRepository());
+        $this->assertInstanceOf(ResponseInterface::class, $response);
+        $this->assertSame(1, $response->response());
+    }
+
+    /**
+     * @throws UndefinedRepositoryUseCaseException
+     */
     public function testItInitializeRepositoryUsingSetter(): void
     {
         $foo = 'Hello';
