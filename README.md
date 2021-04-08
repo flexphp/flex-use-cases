@@ -1,3 +1,5 @@
+# DEPRECATED
+
 # UseCases
 
 [![Latest Stable Version](https://poser.pugx.org/flexphp/use-cases/v/stable)](https://packagist.org/packages/flexphp/use-cases)
